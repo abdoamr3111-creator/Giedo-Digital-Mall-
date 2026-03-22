@@ -1,0 +1,70 @@
+:root {
+  --bg: #0b1020;
+  --panel: #121a30;
+  --panel-2: #1a2542;
+  --text: #eef2ff;
+  --muted: #aeb8d0;
+  --primary: #4f7cff;
+  --border: rgba(255,255,255,.08);
+  --success: #37d67a;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(180deg, #0b1020 0%, #10172a 100%);
+  color: var(--text);
+}
+a { color: inherit; text-decoration: none; }
+.container { width: min(1150px, calc(100% - 32px)); margin: 0 auto; }
+.topbar { position: sticky; top: 0; z-index: 10; background: rgba(11,16,32,.88); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
+.topbar-inner, .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 16px 0; }
+.brand { font-weight: 800; font-size: 1.1rem; }
+.nav { display: flex; flex-wrap: wrap; gap: 10px; }
+.nav a { padding: 10px 14px; border-radius: 12px; color: var(--muted); }
+.nav a.active { background: var(--panel-2); color: white; }
+.page { padding: 30px 0 50px; }
+.narrow { max-width: 700px; }
+.card { background: rgba(18,26,48,.9); border: 1px solid var(--border); border-radius: 24px; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,.18); }
+.hero-card { display: grid; grid-template-columns: 1.4fr .8fr; gap: 22px; padding: 28px; }
+.hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); margin: 8px 0 10px; }
+.eyebrow { color: #8fb2ff; font-weight: 700; }
+.muted { color: var(--muted); }
+.success { color: var(--success); }
+.actions { display: flex; gap: 12px; margin-top: 18px; }
+.actions.wrap { flex-wrap: wrap; }
+.btn { border: none; border-radius: 14px; padding: 12px 16px; font-weight: 700; cursor: pointer; }
+.btn.primary { background: var(--primary); color: #fff; }
+.btn.secondary { background: #223158; color: #fff; }
+.btn.ghost, .btn.small { background: #17203b; color: #fff; }
+.btn.small { padding: 8px 12px; }
+.badge { display: inline-grid; place-items: center; min-width: 20px; height: 20px; padding: 0 6px; border-radius: 999px; background: var(--primary); color: #fff; font-size: .75rem; margin-inline-start: 6px; }
+.grid { display: grid; gap: 18px; }
+.grid.three { grid-template-columns: repeat(3, 1fr); }
+.grid.two { grid-template-columns: repeat(2, 1fr); }
+.products-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.product-card { overflow: hidden; padding: 0; }
+.product-image { width: 100%; height: 220px; object-fit: cover; display: block; }
+.product-body { padding: 18px; }
+.product-body h3 { margin: 10px 0 8px; }
+.product-body p { color: var(--muted); min-height: 52px; }
+.product-meta { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin: 14px 0; }
+.pill { display: inline-block; padding: 7px 10px; border-radius: 999px; background: #1c2b4d; color: #b4c7ff; font-size: .86rem; }
+.status-panel { display: grid; gap: 12px; }
+.status-item { background: #16203a; border: 1px solid var(--border); border-radius: 18px; padding: 16px; }
+.status-item span { display:block; color:var(--muted); margin-bottom: 6px; }
+.stat-card p { color: var(--muted); }
+.page-head { display:flex; justify-content:space-between; gap:16px; align-items:center; margin-bottom:18px; }
+.input { width: 100%; background: #0d1428; color: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 14px; }
+.textarea { min-height: 120px; resize: vertical; }
+.stack { display:grid; gap:14px; }
+.stack.compact { gap: 10px; }
+.cart-row, .list-row { display:flex; justify-content:space-between; align-items:center; gap:14px; }
+.qty-controls { display:flex; align-items:center; gap:10px; }
+.checkout-box { display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; }
+.admin-layout { display:grid; grid-template-columns: 1.1fr .9fr; gap: 18px; }
+.footer { border-top: 1px solid var(--border); margin-top: 30px; }
+@media (max-width: 860px) {
+  .hero-card, .admin-layout, .grid.three, .grid.two, .page-head { grid-template-columns: 1fr; display:grid; }
+  .topbar-inner, .footer-inner { flex-direction: column; align-items: flex-start; }
+}
