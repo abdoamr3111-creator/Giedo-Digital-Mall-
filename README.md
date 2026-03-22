@@ -1,2 +1,1 @@
-# Giedo-Digital-Mall-
-Big mall
+سز
